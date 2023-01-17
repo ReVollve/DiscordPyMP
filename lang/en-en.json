@@ -1,0 +1,17 @@
+{
+  "play": "Added <%s> to queue",
+  "stop": "Player stopped",
+  "resume": "Resuming",
+  "jump": "Skipped to %d",
+  "skip": "Skipped",
+  "np": "Now Playing: %s: %s",
+  "loopq": "Looping queue",
+  "noloop": "No Loop",
+  "looptrack": "Looping track",
+  "clear": "Clear",
+  "load": "Loading ...",
+  "settings": "The queue consists of %d songs. Shuffle = %s, Loop = %s, Position = %d",
+  "shuffle": "Shuffle %s",
+  "rm": "Removing: %s",
+  "activity": "music"
+}

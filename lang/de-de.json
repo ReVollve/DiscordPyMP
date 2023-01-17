@@ -1,0 +1,17 @@
+{
+  "play": "Führe <%s> aus",
+  "stop": "Stehengeblieben!",
+  "resume": "Stoße vor in feindliches Gebiet!",
+  "jump":"Skipped to %d",
+  "skip":"Skipped",
+  "np":"Erschieße: %s",
+  "loopq":"Wiederhole alle Marschlieder",
+  "noloop":"Schleife aufgelöst!",
+  "looptrack":"Wiederhole nur dieses Marschlied",
+  "clear":"Clear",
+  "load":"Lade ...",
+  "settings":"Der Volksempfänger umfasst %d Lieder. Shuffle = %s, Loop = %s, Position = %d",
+  "shuffle":"Zufällige wieder gabe %s",
+  "rm":"Entferne: %s",
+  "activity":"Musik für ganz Deutschland!"
+}
