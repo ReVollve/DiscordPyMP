@@ -13,6 +13,7 @@ lang: str = None
 token: str = None
 prefix: str = None
 verbose: bool = None
+debug: bool = None
 ads_enabled: bool = None
 ads_chance: int = None
 FFMPEG_OPTIONS: dict = None
@@ -30,21 +31,20 @@ def load_config():
         lang_json = open("lang/" + lang + ".json", encoding='utf-8')
         lang_cfg = json.load(lang_json)
         __verify_integrity_lang()
-
-    except Exception as e:
-        log.critical("An critical error appeared during the config setup!")
-        log.critical(e)
+    except Exception:
+        print("Bad config! Exiting")
         exit(-1)
 
 
 def __verify_integrity_bot():
-    global version, lang, token, prefix, verbose, ads_enabled, ads_chance, FFMPEG_OPTIONS, YDL_OPTIONS
+    global version, lang, token, prefix, verbose, debug, ads_enabled, ads_chance, FFMPEG_OPTIONS, YDL_OPTIONS
 
     version = bot_cfg['sVersion']
     lang = bot_cfg['sLang']
     token = bot_cfg['sToken']
     prefix = bot_cfg['sPrefix']
     verbose = bot_cfg['bVerbose']
+    debug = bot_cfg['bDebug']
     ads_enabled = bot_cfg['bAdsEnabled']
     ads_chance = bot_cfg['nAdsChance']
     FFMPEG_OPTIONS = bot_cfg['FFMPEG_OPTIONS']

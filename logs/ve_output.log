@@ -1469,3 +1469,183 @@ INFO 01/15/202301:22:31 AM Configs initialized. Version 2.5
 INFO 01/15/202301:22:31 AM logging in using static token
 INFO 01/15/202301:22:31 AM Shard ID None has connected to Gateway (Session ID: 75a6a765b25ff3c8b657b922c77a37da).
 INFO 01/15/202301:22:33 AM Logged on as "Der Volksempfänger#5892"
+INFO 01/20/202307:18:32 PM Starting MP
+INFO 01/20/202307:18:32 PM Configs initialized. Version 2.5
+INFO 01/20/202307:18:32 PM logging in using static token
+INFO 01/20/202307:33:23 PM Starting DiscordPyMusicPlayer
+INFO 01/20/202307:33:23 PM logging in using static token
+INFO 01/20/202307:33:42 PM Starting DiscordPyMusicPlayer
+INFO 01/20/202307:33:42 PM logging in using static token
+INFO 01/20/202307:33:43 PM Shard ID None has connected to Gateway (Session ID: 0095d9923252a87b0372f54c195cfeaa).
+INFO 01/20/202307:33:45 PM Logged on as "Der Volksempfänger#5892"
+INFO 01/20/202307:34:38 PM Starting DiscordPyMusicPlayer
+INFO 01/20/202307:34:38 PM Running version 2.5 with lang en-en
+INFO 01/20/202307:34:38 PM logging in using static token
+INFO 01/20/202307:34:39 PM Shard ID None has connected to Gateway (Session ID: ab51ec5a1e8ca20c4deeabbb074e89cb).
+INFO 01/20/202307:34:41 PM Logged on as "Der Volksempfänger#5892"
+INFO 01/20/202307:42:08 PM Starting DiscordPyMusicPlayer
+INFO 01/20/202307:42:08 PM Running version 2.5 with lang en-en
+INFO 01/20/202307:42:08 PM logging in using static token
+INFO 01/20/202307:42:09 PM Shard ID None has connected to Gateway (Session ID: f9df11bc2723e64beabc2d79ea30feb9).
+INFO 01/20/202307:42:11 PM Logged on as "Der Volksempfänger#5892"
+INFO 01/20/202307:42:40 PM Connecting to voice...
+INFO 01/20/202307:42:40 PM Starting voice handshake... (connection attempt 1)
+INFO 01/20/202307:42:40 PM Voice handshake complete. Endpoint found frankfurt10006.discord.media
+INFO 01/20/202307:42:40 PM New Instance opened at "Test Discord"
+INFO 01/20/202307:42:40 PM "Test Discord": Request "https://www.youtube.com/playlist?list=PLWgGKozgFbAq6LcASZLpbjp0axPy3av4d"
+INFO 01/20/202307:42:42 PM "Test Discord": Request "Tradition" took 2s!
+INFO 01/20/202307:42:43 PM "Test Discord": Playing position 0: https://www.youtube.com/playlist?list=PLWgGKozgFbAq6LcASZLpbjp0axPy3av4d Reichsmetall - ARAM (Official Music Video)
+WARNING 01/20/202307:45:52 PM "Test Discord": Something messed up: position >= size: 1 >= 1
+INFO 01/20/202307:45:52 PM ffmpeg process 1712 successfully terminated with return code of 0.
+INFO 01/20/202307:46:09 PM Disconnected from voice by force... potentially reconnecting.
+INFO 01/20/202307:46:09 PM Starting voice handshake... (connection attempt 2)
+WARNING 01/20/202307:47:06 PM Shard ID None has stopped responding to the gateway. Closing and restarting.
+INFO 01/20/202307:47:09 PM The voice handshake is being terminated for Channel ID 442743417362186244 (Guild ID 442743417362186240)
+INFO 01/20/202307:47:09 PM Reconnect was unsuccessful, disconnecting from voice normally...
+INFO 01/20/202308:12:08 PM Starting DiscordPyMusicPlayer
+INFO 01/20/202308:12:08 PM Running version 2.5 with lang en-en
+INFO 01/20/202308:12:08 PM logging in using static token
+INFO 01/20/202308:12:09 PM Shard ID None has connected to Gateway (Session ID: ae12f342bbf2e9bb2044f56b750efbec).
+INFO 01/20/202308:12:11 PM Logged on as "Der Volksempfänger#5892"
+INFO 01/20/202308:12:25 PM Connecting to voice...
+INFO 01/20/202308:12:25 PM Starting voice handshake... (connection attempt 1)
+INFO 01/20/202308:12:25 PM Voice handshake complete. Endpoint found frankfurt10005.discord.media
+INFO 01/20/202308:12:25 PM New Instance opened at "Groß deutsches Kaiserreich"
+INFO 01/20/202308:12:25 PM "Groß deutsches Kaiserreich": Request "https://www.youtube.com/watch?v=Wl3DfnTffsc&list=PLWgGKozgFbAq6LcASZLpbjp0axPy3av4d&index=1"
+ERROR 01/20/202308:12:25 PM Something messed up within the extractor.
+ERROR 01/20/202308:12:25 PM __enter__
+INFO 01/20/202308:12:45 PM The voice handshake is being terminated for Channel ID 989168134495809557 (Guild ID 701494988382404640)
+INFO 01/20/202308:12:45 PM Starting DiscordPyMusicPlayer
+INFO 01/20/202308:12:45 PM Running version 2.5 with lang en-en
+INFO 01/20/202308:12:45 PM logging in using static token
+INFO 01/20/202308:12:46 PM Shard ID None has connected to Gateway (Session ID: 64026d911fc11b440cf02ebf11284d2f).
+INFO 01/20/202308:12:48 PM Logged on as "Der Volksempfänger#5892"
+INFO 01/20/202308:12:49 PM Connecting to voice...
+INFO 01/20/202308:12:49 PM Starting voice handshake... (connection attempt 1)
+INFO 01/20/202308:12:49 PM Voice handshake complete. Endpoint found frankfurt10005.discord.media
+INFO 01/20/202308:12:49 PM New Instance opened at "Groß deutsches Kaiserreich"
+INFO 01/20/202308:12:49 PM "Groß deutsches Kaiserreich": Request "https://www.youtube.com/watch?v=Wl3DfnTffsc&list=PLWgGKozgFbAq6LcASZLpbjp0axPy3av4d&index=1"
+ERROR 01/20/202308:12:49 PM Something messed up within the extractor.
+ERROR 01/20/202308:12:49 PM Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\revol\Documents\Projects\Python\ve-py\bot_musicplayer.py", line 183, in queue
+    with yt_dlp.YoutubeDL as ydl:
+AttributeError: __enter__
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\revol\Documents\Projects\Python\ve-py\venv\lib\site-packages\discord\client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\revol\Documents\Projects\Python\ve-py\bot.py", line 65, in on_message
+    await obj.queue(cf.get_args("q "))
+  File "C:\Users\revol\Documents\Projects\Python\ve-py\bot_utils.py", line 29, in wrapper
+    return await asyncio.to_thread(func, *args, **kwargs)
+  File "C:\Python39\lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+  File "C:\Python39\lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\revol\Documents\Projects\Python\ve-py\bot_musicplayer.py", line 224, in queue
+    log.error(e.with_traceback())
+TypeError: BaseException.with_traceback() takes exactly one argument (0 given)
+INFO 01/20/202308:13:48 PM The voice handshake is being terminated for Channel ID 989168134495809557 (Guild ID 701494988382404640)
+INFO 01/20/202308:13:49 PM Starting DiscordPyMusicPlayer
+INFO 01/20/202308:13:49 PM Running version 2.5 with lang en-en
+INFO 01/20/202308:13:49 PM logging in using static token
+INFO 01/20/202308:13:50 PM Shard ID None has connected to Gateway (Session ID: 6c8d6617b822b02d256a840133c85a4c).
+INFO 01/20/202308:13:52 PM Logged on as "Der Volksempfänger#5892"
+INFO 01/20/202308:13:52 PM Connecting to voice...
+INFO 01/20/202308:13:52 PM Starting voice handshake... (connection attempt 1)
+INFO 01/20/202308:13:52 PM Voice handshake complete. Endpoint found frankfurt10005.discord.media
+INFO 01/20/202308:13:53 PM New Instance opened at "Groß deutsches Kaiserreich"
+INFO 01/20/202308:13:53 PM "Groß deutsches Kaiserreich": Request "https://www.youtube.com/watch?v=Wl3DfnTffsc&list=PLWgGKozgFbAq6LcASZLpbjp0axPy3av4d&index=1"
+ERROR 01/20/202308:13:54 PM Something messed up within the extractor.
+ERROR 01/20/202308:13:54 PM Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\revol\Documents\Projects\Python\ve-py\bot_musicplayer.py", line 218, in queue
+    result.origin_title,
+AttributeError: 'Song' object has no attribute 'origin_title'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\revol\Documents\Projects\Python\ve-py\venv\lib\site-packages\discord\client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\revol\Documents\Projects\Python\ve-py\bot.py", line 65, in on_message
+    await obj.queue(cf.get_args("q "))
+  File "C:\Users\revol\Documents\Projects\Python\ve-py\bot_utils.py", line 29, in wrapper
+    return await asyncio.to_thread(func, *args, **kwargs)
+  File "C:\Python39\lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+  File "C:\Python39\lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\revol\Documents\Projects\Python\ve-py\bot_musicplayer.py", line 224, in queue
+    log.error(e.with_traceback())
+TypeError: BaseException.with_traceback() takes exactly one argument (0 given)
+INFO 01/20/202308:13:59 PM The voice handshake is being terminated for Channel ID 989168134495809557 (Guild ID 701494988382404640)
+INFO 01/20/202308:14:23 PM Starting DiscordPyMusicPlayer
+INFO 01/20/202308:14:23 PM Running version 2.5 with lang en-en
+INFO 01/20/202308:14:23 PM logging in using static token
+INFO 01/20/202308:14:24 PM Shard ID None has connected to Gateway (Session ID: 889755187f732671c969e849751aaddf).
+INFO 01/20/202308:14:26 PM Logged on as "Der Volksempfänger#5892"
+INFO 01/20/202308:14:27 PM Connecting to voice...
+INFO 01/20/202308:14:27 PM Starting voice handshake... (connection attempt 1)
+INFO 01/20/202308:14:27 PM Voice handshake complete. Endpoint found frankfurt10005.discord.media
+INFO 01/20/202308:14:27 PM New Instance opened at "Groß deutsches Kaiserreich"
+INFO 01/20/202308:14:27 PM "Groß deutsches Kaiserreich": Request "https://www.youtube.com/watch?v=Wl3DfnTffsc&list=PLWgGKozgFbAq6LcASZLpbjp0axPy3av4d&index=1"
+ERROR 01/20/202308:14:28 PM Something messed up within the extractor.
+ERROR 01/20/202308:14:28 PM Ignoring exception in on_message
+Traceback (most recent call last):
+  File "C:\Users\revol\Documents\Projects\Python\ve-py\bot_musicplayer.py", line 218, in queue
+    result.origin_title,
+AttributeError: 'Song' object has no attribute 'origin_title'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\revol\Documents\Projects\Python\ve-py\venv\lib\site-packages\discord\client.py", line 409, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\revol\Documents\Projects\Python\ve-py\bot.py", line 65, in on_message
+    await obj.queue(cf.get_args("q "))
+  File "C:\Users\revol\Documents\Projects\Python\ve-py\bot_utils.py", line 29, in wrapper
+    return await asyncio.to_thread(func, *args, **kwargs)
+  File "C:\Python39\lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+  File "C:\Python39\lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\revol\Documents\Projects\Python\ve-py\bot_musicplayer.py", line 224, in queue
+    log.error(e.with_traceback())
+TypeError: BaseException.with_traceback() takes exactly one argument (0 given)
+INFO 01/20/202308:14:57 PM The voice handshake is being terminated for Channel ID 989168134495809557 (Guild ID 701494988382404640)
+INFO 01/20/202308:14:58 PM Starting DiscordPyMusicPlayer
+INFO 01/20/202308:14:58 PM Running version 2.5 with lang en-en
+INFO 01/20/202308:14:58 PM logging in using static token
+INFO 01/20/202308:14:59 PM Shard ID None has connected to Gateway (Session ID: f3a4c54331daa2e408bbd4192259ae85).
+INFO 01/20/202308:15:01 PM Logged on as "Der Volksempfänger#5892"
+INFO 01/20/202308:15:01 PM Connecting to voice...
+INFO 01/20/202308:15:01 PM Starting voice handshake... (connection attempt 1)
+INFO 01/20/202308:15:01 PM Voice handshake complete. Endpoint found frankfurt10005.discord.media
+INFO 01/20/202308:15:02 PM New Instance opened at "Groß deutsches Kaiserreich"
+INFO 01/20/202308:15:02 PM "Groß deutsches Kaiserreich": Request "https://www.youtube.com/watch?v=Wl3DfnTffsc&list=PLWgGKozgFbAq6LcASZLpbjp0axPy3av4d&index=1"
+INFO 01/20/202308:15:03 PM "Groß deutsches Kaiserreich": Request "Reichsmetall - ARAM (Official Music Video)" took 0s!
+INFO 01/20/202308:15:04 PM "Groß deutsches Kaiserreich": Playing position 0: https://youtu.be/Wl3DfnTffsc Reichsmetall - ARAM (Official Music Video)
+WARNING 01/20/202308:15:19 PM "Groß deutsches Kaiserreich": Something messed up: position >= size: 1 >= 1
+INFO 01/20/202308:15:19 PM ffmpeg process 9576 has not terminated. Waiting to terminate...
+INFO 01/20/202308:15:19 PM The voice handshake is being terminated for Channel ID 989168134495809557 (Guild ID 701494988382404640)
+INFO 01/20/202308:15:19 PM ffmpeg process 9576 should have terminated with a return code of 1.
+INFO 01/20/202308:20:21 PM Starting DiscordPyMusicPlayer
+INFO 01/20/202308:20:21 PM Running version 2.5 with lang en-en
+INFO 01/20/202308:20:21 PM logging in using static token
+INFO 01/20/202308:20:22 PM Shard ID None has connected to Gateway (Session ID: 5ab8f4eadaa1f1ce046717924a61583b).
+INFO 01/20/202308:20:24 PM Logged on as "Der Volksempfänger#5892"
+INFO 01/20/202308:20:31 PM Connecting to voice...
+INFO 01/20/202308:20:31 PM Starting voice handshake... (connection attempt 1)
+INFO 01/20/202308:20:31 PM Voice handshake complete. Endpoint found frankfurt10005.discord.media
+INFO 01/20/202308:20:31 PM New Instance opened at "Groß deutsches Kaiserreich"
+INFO 01/20/202308:20:31 PM "Groß deutsches Kaiserreich": Request "meine name borat"
+INFO 01/20/202308:20:33 PM "Groß deutsches Kaiserreich": Request "Borat" took 1s!
+INFO 01/20/202308:20:33 PM "Groß deutsches Kaiserreich": Playing position 0: https://youtu.be/G90jcaCtqkY Borat
+WARNING 01/20/202308:22:03 PM "Groß deutsches Kaiserreich": Something messed up: position >= size: 1 >= 1
+INFO 01/20/202308:22:03 PM ffmpeg process 31444 has not terminated. Waiting to terminate...
+INFO 01/20/202308:22:03 PM ffmpeg process 31444 should have terminated with a return code of 1.
+INFO 01/20/202308:22:03 PM The voice handshake is being terminated for Channel ID 989168134495809557 (Guild ID 701494988382404640)

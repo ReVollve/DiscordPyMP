@@ -1,6 +1,11 @@
 # Changelog
 <a href="README.md">Readme</a> <br>
 
+version 2.5.1
+- rewrite of bot_musicplayer#queue
+- added debug mode
+- fixed broken songs (again x2)
+
 version 2.5
 - changed project name to DiscordPyMP
 - changed ini to json

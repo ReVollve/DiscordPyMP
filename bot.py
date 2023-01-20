@@ -31,6 +31,7 @@ async def leave(message):
                 obj.destroy()
                 instances.remove(obj)
                 del obj
+                log.info("\"%s\": Disconnected", message.guild.name)
                 break
         await message.guild.voice_client.disconnect()
 
@@ -134,11 +135,11 @@ async def reply(channel, cmd, *args):
 
 
 if __name__ == '__main__':
+    bot_config.load_config()
     bot_logging.setup_logging()
     log = bot_logging.getLogger("bot_main")
-    log.info('Starting MP')
-    bot_config.load_config()
-    log.info('Configs initialized. Version %s', bot_config.version)
+    log.info('Starting DiscordPyMusicPlayer')
+    log.info('Running version %s with lang %s', bot_config.version, bot_config.lang)
 
     intents = discord.Intents.default()
     intents.message_content = True

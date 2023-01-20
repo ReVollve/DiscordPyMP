@@ -17,7 +17,6 @@ YDL_OPTIONS = None
 FFMPEG_OPTIONS = None
 project_dir = None
 
-
 global log
 log = getLogger('bot_player')
 
@@ -27,14 +26,14 @@ class Song:
     title = None
     url = None
     id = None
-    playlist_title = None
+    origin_title = None
 
-    def __init__(self, source_url, title, url, video_id, playlist_title=None):
+    def __init__(self, source_url, title, url, video_id, origin_title):
         self.sourceUrl = source_url
         self.title = title
         self.url = url
         self.id = video_id
-        self.playlist_title = playlist_title
+        self.origin_title = origin_title
 
 
 class MusicPlayer:
@@ -66,6 +65,7 @@ class MusicPlayer:
         log.info("New Instance opened at \"" + text_channel.guild.name + "\"")
 
     async def music(self):
+        cache = self.position
         size = len(self.songs)
         if size == 0:
             log.info("\"" + self.guild.name + "\": Playlist empty")
@@ -77,13 +77,20 @@ class MusicPlayer:
                 self.position) + ' >= ' + str(size))
             return
         self.playing = True
-        source = await discord.FFmpegOpusAudio.from_probe(self.songs[self.position].sourceUrl, **FFMPEG_OPTIONS)
-        self.client.play(source, after=lambda e: asyncio.run(self.song_complete()))
-        log.info("\"%s\": Playing position %s: %s %s",
-                 self.guild.name,
-                 str(self.position),
-                 self.songs[self.position].url,
-                 str(self.songs[self.position].title))
+        try:
+            source = await discord.FFmpegOpusAudio.from_probe(self.songs[self.position].sourceUrl, **FFMPEG_OPTIONS)
+            self.client.play(source, after=lambda e: asyncio.run(self.song_complete()))
+            log.info("\"%s\": Playing position %s: %s %s",
+                     self.guild.name,
+                     str(self.position),
+                     self.songs[self.position].url,
+                     str(self.songs[self.position].title))
+        except Exception as e:
+            log.warning("\"%s\": An error occurred during playing position %d. Skipping and removing song from queue",
+                        self.guild.name, self.position)
+            if bot_config.debug:
+                log.warning(e.with_traceback())
+            self.songs.pop(cache)
 
     async def song_complete(self):
         self.playing = False
@@ -163,60 +170,65 @@ class MusicPlayer:
             global load_msg
             load_msg = await reply(self.textChannel, 'load')
 
-        async def async_queue(music):
+        async def delete_message():
             global load_msg
             await load_msg.delete()
-            if music:
-                await reply(self.textChannel, 'play', result.url)
-                await self.music()
+
+        async def start_music():
+            await reply(self.textChannel, 'play', result.url)
+            await self.music()
 
         asyncio.run_coroutine_threadsafe(load_message(), self.eventLoop)
 
         try:
-            if message.startswith('https://') and not message.count('playlist'):
-                if message.count('&list'):
-                    message = message.split('&list')[0]
-                with yt_dlp.YoutubeDL(YDL_OPTIONS) as ydl:
-                    info = ydl.extract_info(message, download=False)
-                    url = 'https://youtu.be/' + info['id']
-                    result = Song(info.get("url"), info.get("title"), url, info.get("id"))
-                    self.songs.append(result)
-                    log.info("\"%s\": Request \"%s\" took %ds!", self.guild.name,
-                             result.title,
-                             time.time() - startTime)
+            with yt_dlp.YoutubeDL(YDL_OPTIONS) as ydl:
+                https = message.startswith('https://')
+                playlist = message.count('playlist')
+                hasList = message.count('&list')
 
-            elif message.startswith('https://') and message.count('playlist'):
-                with yt_dlp.YoutubeDL(YDL_OPTIONS) as ydl:
+                global info
+                info = None
+                global result
+                result = None
+
+                if https and not playlist:
+                    if hasList:
+                        info = ydl.extract_info(message.split('&list')[0], download=False)
+                    else:
+                        info = ydl.extract_info(message, download=False)
+                elif https and playlist:
                     info = ydl.extract_info(message, download=False)
+                else:
+                    info = ydl.extract_info(("ytsearch:" + message), download=False)
+                    info = info['entries'][0]
+                if playlist:
                     entries = info['entries']
-                    for data in entries:
+                    for elem in entries:
                         try:
                             url = message
-                            result = Song(data.get("url"), data['title'], url, data['id'], info.get("title"))
+                            result = Song(elem.get("url"), elem['title'], url, elem['id'], info.get("title"))
                             self.songs.append(result)
                         except:
                             continue
-
-                    log.info("\"%s\": Request \"%s\" took %ds!", self.guild.name,
-                             result.playlist_title,
-                             time.time() - startTime)
-            else:
-                with yt_dlp.YoutubeDL(YDL_OPTIONS) as ydl:
-                    info = ydl.extract_info(("ytsearch:" + message), download=False)
-                    data = info['entries'][0]
-                    url = 'https://youtu.be/' + data['id']
-                    result = Song(data['url'], data['title'], url, data['id'])
+                else:
+                    url = 'https://youtu.be/' + info['id']
+                    result = Song(info.get("url"), info.get("title"), url, info.get("id"), info.get("title"))
                     self.songs.append(result)
-                    log.info("\"%s\": Request \"%s\" took %ds!", self.guild.name,
-                             result.title,
-                             time.time() - startTime)
+
+                log.info("\"%s\": Request \"%s\" took %ds!", self.guild.name,
+                         result.origin_title,
+                         time.time() - startTime)
+
+
         except Exception as e:
             log.error("Something messed up within the extractor.")
-            log.error(e)
-            asyncio.run_coroutine_threadsafe(async_queue(False), self.eventLoop)
+            if bot_config.debug:
+                log.error(e.with_traceback())
+            asyncio.run_coroutine_threadsafe(delete_message(), self.eventLoop)
             return
 
-        asyncio.run_coroutine_threadsafe(async_queue(True), self.eventLoop)
+        asyncio.run_coroutine_threadsafe(delete_message(), self.eventLoop)
+        asyncio.run_coroutine_threadsafe(start_music(), self.eventLoop)
 
     def destroy(self):
         log.info("Instance closed at \"" + self.guild.name + "\"")

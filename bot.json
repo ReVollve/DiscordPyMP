@@ -1,9 +1,10 @@
 {
-  "sVersion": "2.5",
+  "sVersion": "2.5.1",
   "sLang": "en-en",
-  "sToken": "example_token",
+  "sToken": "ExampleToken",
   "sPrefix": "-",
   "bVerbose": true,
+  "bDebug": false,
   "bAdsEnabled": false,
   "nAdsChance": 5,
 
