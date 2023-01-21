@@ -2,7 +2,6 @@
 .idea/
 logs/
 songs/
-ads/*
 venv/
 vn
 lang/de-de.json
