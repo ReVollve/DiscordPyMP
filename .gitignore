@@ -1,0 +1,9 @@
+*.exe
+.idea/
+logs/
+songs/
+ads/*
+venv/
+vn
+lang/de-de.json
+lang/de-ns.json
