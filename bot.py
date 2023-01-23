@@ -45,7 +45,8 @@ class Client(discord.Client):
         author = message.author
         if author.voice is None:
             return
-        channel = author.voice.channel
+        tchannel = message.channel
+        vchannel = author.voice.channel
         if author == self.user:
             return
         message.guild.voice_client
@@ -54,7 +55,7 @@ class Client(discord.Client):
         if cf.starts('play') or \
                 cf.starts('q') or \
                 cf.starts('paly'):
-            await join(self, message, channel, asyncio.get_running_loop())
+            await join(self, message, vchannel, asyncio.get_running_loop())
             if cf.equal('play') or cf.equal('q') or cf.equal('paly'):
                 return
             for obj in instances:
@@ -68,25 +69,33 @@ class Client(discord.Client):
                     break
 
         elif cf.starts('join'):
-            await join(self, message, channel, asyncio.get_running_loop())
+            await join(self, message, vchannel, asyncio.get_running_loop())
         elif cf.starts('leave'):
             await leave(message)
+            await reply(tchannel, "leave")
         elif cf.starts('pause') or cf.starts('stop'):
             for obj in instances:
                 if obj.client == message.guild.voice_client:
-                    await obj.pause(True)
+                    obj.pause(True)
+                    await reply(tchannel, "stop")
+                    log.info("\"%s\": Player paused", obj.guild_name)
         elif cf.starts('resume'):
             for obj in instances:
                 if obj.client == message.guild.voice_client:
-                    await obj.pause(False)
+                    obj.pause(False)
+                    await reply(tchannel, "resume")
+                    log.info("\"%s\": Player resumed", obj.guild_name)
         elif cf.starts('skip'):
             for obj in instances:
                 if obj.client == message.guild.voice_client:
                     await obj.skip()
+                    # await reply(tchannel, "resume")
+                    log.info("\"%s\": (%d) Song skipped", obj.guild_name, obj.position)
         elif cf.starts('loop'):
             for obj in instances:
                 if obj.client == message.guild.voice_client:
                     await obj.loop()
+                    log.info("\"%s\": Loop mode changed to %d", obj.guild_name, obj.loopMode)
         elif cf.starts('np'):
             for obj in instances:
                 if obj.client == message.guild.voice_client:
@@ -135,7 +144,6 @@ async def reply(channel, cmd, *args):
 
 
 if __name__ == '__main__':
-    bot_config.load_config()
     bot_logging.setup_logging()
     log = bot_logging.getLogger("bot_main")
     log.info('Starting DiscordPyMusicPlayer')

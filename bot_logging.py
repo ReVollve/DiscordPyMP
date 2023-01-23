@@ -10,13 +10,13 @@ def setup_logging():
     if debug:
         logging.basicConfig(
             handlers=[
-                logging.handlers.RotatingFileHandler(filename="logs/ve_output.log", maxBytes=512000, backupCount=4)],
+                logging.handlers.RotatingFileHandler(filename="logs/bot.log", maxBytes=512000, backupCount=4)],
             level=logging.DEBUG,
             format='%(levelname)s %(asctime)s %(message)s',
             datefmt='%m/%d/%Y%I:%M:%S %p')
     else:
         logging.basicConfig(
-            handlers=[logging.handlers.RotatingFileHandler(filename="logs/ve_output.log", maxBytes=512000, backupCount=4)],
+            handlers=[logging.handlers.RotatingFileHandler(filename="logs/bot.log", maxBytes=512000, backupCount=4)],
             level=logging.INFO,
             format='%(levelname)s %(asctime)s %(message)s',
             datefmt='%m/%d/%Y%I:%M:%S %p')

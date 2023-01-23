@@ -1,6 +1,12 @@
 # Changelog
 <a href="README.md">Readme</a> <br>
 
+version 2.5.2
+- added stop/resume replies and log
+- changed log file name
+- prevents now ads to be played after a song breaks
+- rewrite of bot_config to prevent headaches
+
 version 2.5.1
 - rewrite of bot_musicplayer#queue
 - added debug mode
@@ -10,6 +16,7 @@ version 2.5
 - changed project name to DiscordPyMP
 - changed ini to json
 - changed file structure
+- made repo public
 - code cleanup
 - separated files
 - fixed clear command

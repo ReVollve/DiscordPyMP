@@ -11,25 +11,25 @@ from bot_logging import getLogger
 import bot_config
 from bot_utils import to_thread
 
-ads_enabled = None
-ads_chance = None
-YDL_OPTIONS = None
-FFMPEG_OPTIONS = None
-project_dir = None
+ads_enabled = bot_config.ads_enabled
+ads_chance = bot_config.ads_chance
+YDL_OPTIONS = bot_config.YDL_OPTIONS
+FFMPEG_OPTIONS = bot_config.FFMPEG_OPTIONS
+project_dir = bot_config.project_dir
 
 global log
 log = getLogger('bot_player')
 
 
 class Song:
-    sourceUrl = None
+    source_url = None
     title = None
     url = None
     id = None
     origin_title = None
 
     def __init__(self, source_url, title, url, video_id, origin_title):
-        self.sourceUrl = source_url
+        self.source_url = source_url
         self.title = title
         self.url = url
         self.id = video_id
@@ -41,6 +41,7 @@ class MusicPlayer:
     guild: discord.Guild = None
     textChannel: discord.TextChannel = None
     eventLoop = None
+    guild_name = None
     adPlayed = False
     shuffle = False
     stop = False
@@ -50,17 +51,11 @@ class MusicPlayer:
     songs = []
 
     def __init__(self, voice_client, text_channel, loop):
-        global ads_chance, ads_enabled, YDL_OPTIONS, FFMPEG_OPTIONS, project_dir
         self.client = voice_client
         self.guild = text_channel.guild
         self.textChannel = text_channel
         self.eventLoop = loop
-
-        ads_enabled = bot_config.ads_enabled
-        ads_chance = bot_config.ads_chance
-        YDL_OPTIONS = bot_config.YDL_OPTIONS
-        FFMPEG_OPTIONS = bot_config.FFMPEG_OPTIONS
-        project_dir = bot_config.project_dir
+        self.guild_name = self.guild.name
 
         log.info("New Instance opened at \"" + text_channel.guild.name + "\"")
 
@@ -78,7 +73,7 @@ class MusicPlayer:
             return
         self.playing = True
         try:
-            source = await discord.FFmpegOpusAudio.from_probe(self.songs[self.position].sourceUrl, **FFMPEG_OPTIONS)
+            source = await discord.FFmpegOpusAudio.from_probe(self.songs[self.position].source_url, **FFMPEG_OPTIONS)
             self.client.play(source, after=lambda e: asyncio.run(self.song_complete()))
             log.info("\"%s\": Playing position %s: %s %s",
                      self.guild.name,
@@ -90,6 +85,7 @@ class MusicPlayer:
                         self.guild.name, self.position)
             if bot_config.debug:
                 log.warning(e.with_traceback())
+            self.adPlayed = True
             self.songs.pop(cache)
 
     async def song_complete(self):

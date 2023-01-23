@@ -13,5 +13,6 @@
   "settings": "The queue consists of %d songs. Shuffle = %s, Loop = %s, Position = %d",
   "shuffle": "Shuffle %s",
   "rm": "Removing: %s",
-  "activity": "music"
+  "activity": "music",
+  "custom": "%s"
 }
