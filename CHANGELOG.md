@@ -1,6 +1,9 @@
 # Changelog
 <a href="README.md">Readme</a> <br>
 
+version 2.5.3
+- added mit license
+
 version 2.5.2
 - added stop/resume replies and log
 - changed log file name
